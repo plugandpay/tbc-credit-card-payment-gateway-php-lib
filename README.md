@@ -4,7 +4,7 @@
 
 Making payment work on your website is a pain!  
 So to make everyones' life a bit easier we are sharing the  
-Georgian TBC payment gateway on GitHub.  
+Georgian TBC payment gateway sdk on GitHub.  
 
 Have fun :)
 
@@ -36,6 +36,7 @@ Method name | Return Value | Description
 1. Regular payments
 2. **DMS** example
 3. CRON for `close_day()`
+4. Make composer compatible
 
 ### API
 
