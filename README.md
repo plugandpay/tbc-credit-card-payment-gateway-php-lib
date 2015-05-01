@@ -3,8 +3,11 @@
 # Tbcpay - online payments php SDK
 
 Making payment work on your website is a pain!
+
 So to make everyones' life a bit easier we are sharing the
+
 Georgian TBC payment gateway on GitHub.
+
 Have fun
 
 ### SMS / DMS
