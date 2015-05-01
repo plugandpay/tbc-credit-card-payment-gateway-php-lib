@@ -2,6 +2,12 @@
 
 # Tbcpay - online payments php SDK
 
+### TODO
+
+1. Regular payments
+2. DMS example
+3. CRON for `close_day()`
+
 ### API
 
 ###### ECOMM Integrated Merchant Agent
