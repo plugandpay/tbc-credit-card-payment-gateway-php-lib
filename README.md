@@ -21,7 +21,7 @@ Every 24 hours, the merchant must send a request to server to close the business
 
 Method name | Return Value | Description
 --- | --- | ---
-**sms_start_transaction()** | `array( 'TRANSACTION_ID' => 'AX23x...' )`
+**sms_start_transaction()** | `array( 'TRANSACTION_ID' => 'AX23x...' )` | start SMS transaction. This is simplest form that charges amount to customer instantly.
 **dms_start_authorization()** |
 **dms_make_transaction( $trans_id )** |
 **get_transaction_result( $trans_id )** |
