@@ -2,6 +2,12 @@
 
 # Tbcpay - online payments php SDK
 
+### API
+
+###### ECOMM Integrated Merchant Agent
+
+This API besides TBCBANK should support BANK OF GEORGIA, LIBERTY BANK, and some other minor banks. But since I've only tested this with TBCBANK, I'm releasing this as such.
+
 ### SSL
 
 TBC bank provides SSL certificate in .p12 format
