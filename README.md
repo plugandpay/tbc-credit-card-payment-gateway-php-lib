@@ -2,13 +2,11 @@
 
 # Tbcpay - online payments php SDK
 
-Making payment work on your website is a pain!
+Making payment work on your website is a pain!  
+So to make everyones' life a bit easier we are sharing the  
+Georgian TBC payment gateway on GitHub.  
 
-So to make everyones' life a bit easier we are sharing the
-
-Georgian TBC payment gateway on GitHub.
-
-Have fun
+Have fun :)
 
 ### SMS / DMS
 
@@ -28,8 +26,6 @@ This API besides **TBCBANK** should support **BANK OF GEORGIA**, **LIBERTY BANK*
 
 ### SSL
 
-TBC bank provides SSL certificate in **.p12** format
-
-To Trasnform it into .pem format Run: `openssl pkcs12 -in *.p12 -out tbcpay.pem`
-
-**!** Move cert directory somewhere non accessible to web server as a security meassure.
+TBC bank provides SSL certificate in **.p12** format  
+To Trasnform it into .pem format Run: `openssl pkcs12 -in *.p12 -out tbcpay.pem`  
+**!** Move cert directory somewhere non accessible to web server as a security meassure.  
