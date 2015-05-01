@@ -1,4 +1,6 @@
-## SSL
+# Tbcpay - online payments php SDK
+
+### SSL
 
 TBC bank provides SSL certificate in .p12 format
 Trasnform it into .pem format
