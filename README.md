@@ -12,6 +12,23 @@ Have fun :)
 
 There are two types of transaction within this system: **SMS** and **DMS**.
 
+SMS - is direct payment, where money is charged in 1 event.  
+DMS - is delayed. Requires two events: first event blocks money on the card, second event takes this money. Second event can be carried out when product is shipped to the customer for example.
+
+Every 24 hours, the merchant must send a request to server to close the business day.
+
+### Methods
+
+```
+sms_start_transaction()
+dms_make_transaction( $trans_id )
+get_transaction_result( $trans_id )
+reverse_transaction( $trans_id, $amount = '', $suspected_fraud = '' )
+refund_transaction( $trans_id )
+credit_transaction( $trans_id, $amount = '' )
+close_day()
+```
+
 ### TODO
 
 1. Regular payments
@@ -27,5 +44,6 @@ This API besides **TBCBANK** should support **BANK OF GEORGIA**, **LIBERTY BANK*
 ### SSL
 
 TBC bank provides SSL certificate in **.p12** format  
-To Trasnform it into .pem format Run: `openssl pkcs12 -in *.p12 -out tbcpay.pem`  
+To Trasnform it into .pem format Run: `openssl pkcs12 -in *.p12 -out tbcpay.pem`
+
 **!** Move cert directory somewhere non accessible to web server as a security meassure.  
