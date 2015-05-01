@@ -22,7 +22,7 @@ Every 24 hours, the merchant must send a request to server to close the business
 ```
 sms_start_transaction()
 
-dms_start_authorization
+dms_start_authorization()
 dms_make_transaction( $trans_id )
 
 get_transaction_result( $trans_id )
