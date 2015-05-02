@@ -17,6 +17,21 @@ DMS - is delayed. Requires two events: first event blocks money on the card, sec
 
 Every 24 hours, the merchant must send a request to server to close the business day.
 
+### Creating object
+
+```php
+$Payment = new tbcpay( 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler', __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'], 1, 981, 'product_id:1234567', 'GE' );
+```
+
+1. Submit url
+2. Certificate absolute path
+3. Certificate passphrase
+4. Client ip address
+5. Amount 1 = 0.01 gel
+6. 981 = GEL http://en.wikipedia.org/wiki/ISO_4217
+7. Description
+8. Interface language
+
 ### Methods
 
 Method name | Return Value | Description
