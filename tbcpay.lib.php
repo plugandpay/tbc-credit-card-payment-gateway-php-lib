@@ -33,11 +33,11 @@
 		 */
 		private $cert_pass;
 
-                /**
-                 * client IP address, mandatory (15 characters)
-                 * @var string
-                 */
-                private $client_ip_addr;
+		/**
+		 * client IP address, mandatory (15 characters)
+		 * @var string
+		 */
+		private $client_ip_addr;
 
 		/**
 		 * transaction amount in fractional units, mandatory (up to 12 digits)
@@ -97,7 +97,7 @@
 			$this->cert_path      = $cert_path;
 			$this->cert_pass      = $cert_pass;
 
-                        $this->client_ip_addr = $client_ip_addr;
+			$this->client_ip_addr = $client_ip_addr;
 			$this->amount         = $amount;
 			$this->currency       = $currency;
 
