@@ -47,8 +47,14 @@ Method name | Return Value | Description
 
 ### Use instructions
 
-1. start.php
-   
+1. start.php Here we start our process. We call bank servers using `sms_start_transaction()` and get `$trans_id` in return.
+2. We use returned $trans_id to redirect user to another bank page, where credit card info can be entered.
+3. After user fills out cc info he is thrown back to our server
+4. Bank will take from you okurl and failurl, this are links to where user is returned from credit card page.
+5. failurl is only called when there is technical problem
+6. okurl is called almost all the time, even if transaction was fraudalent.
+7. Take a look at `ok.php` We get `$trans_id` back from bank, and we plug that in `get_transaction_result( $trans_id )`
+8. `get_transaction_result( $trans_id )` tells us if transaction was success or not. array( 'RESULT' => 'OK' ) for example is success message, transaction went through.
 
 ### TODO
 
