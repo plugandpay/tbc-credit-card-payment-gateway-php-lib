@@ -23,14 +23,14 @@ Every 24 hours, the merchant must send a request to server to close the business
 $Payment = new tbcpay( 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler', __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'], 1, 981, 'product_id:1234567', 'GE' );
 ```
 
-1. Submit url
+1. Submit url (provided by bank)
 2. Certificate absolute path
 3. Certificate passphrase
 4. Client ip address
-5. Amount 1 = 0.01 gel
-6. 981 = GEL http://en.wikipedia.org/wiki/ISO_4217
+5. Amount `1` (0.01 gel)
+6. Currency `981` (http://en.wikipedia.org/wiki/ISO_4217)
 7. Description
-8. Interface language
+8. Interface language `EN`
 
 ### Methods
 
@@ -47,14 +47,17 @@ Method name | Return Value | Description
 
 ### Use instructions
 
-1. start.php Here we start our process. We call bank servers using `sms_start_transaction()` and get `$trans_id` in return.
-2. We use returned $trans_id to redirect user to another bank page, where credit card info can be entered.
-3. After user fills out cc info he is thrown back to our server
-4. Bank will take from you okurl and failurl, this are links to where user is returned from credit card page.
-5. failurl is only called when there is technical problem
-6. okurl is called almost all the time, even if transaction was fraudalent.
-7. Take a look at `ok.php` We get `$trans_id` back from bank, and we plug that in `get_transaction_result( $trans_id )`
-8. `get_transaction_result( $trans_id )` tells us if transaction was success or not. array( 'RESULT' => 'OK' ) for example is success message, transaction went through.
+1. Ask bank to generate certificate
+2. Tell them your server IP so they whitelist it
+3. create `example.com/ok.php` and `example.com/fail.php` urls and tell them about it
+   * ok url - is used for redirecting back user in almost all situations
+   * fail ulr - is used for redirecting back user when technocal error occurs
+
+1. `start.php` Here we start our process. We call bank servers using `sms_start_transaction()` and get `$trans_id` in return.
+   * We use returned $trans_id to redirect user to a bank page, where credit card info can be entered.
+   * After user fills out card info he is thrown back to our `ok.php` url on our server.
+2. Take a look at `ok.php` We get `$trans_id` back from bank, and we plug that in `get_transaction_result( $trans_id )`
+3. `get_transaction_result( $trans_id )` tells us if transaction was success or not. `array( 'RESULT' => 'OK' )` for example is success message, transaction went through.
 
 ### TODO
 
