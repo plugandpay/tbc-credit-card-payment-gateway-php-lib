@@ -45,6 +45,10 @@ Method name | Return Value | Description
 **credit_transaction( $trans_id, $amount = '' )** |
 **close_day()** |
 
+### Use instructions
+
+1. start.php
+   
 
 ### TODO
 
