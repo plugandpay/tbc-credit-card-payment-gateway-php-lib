@@ -116,7 +116,7 @@
 
 			curl_setopt($curl, CURLOPT_POSTFIELDS,     $query_string);
 			curl_setopt($curl, CURLOPT_VERBOSE,        1);
-			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
 			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_SSLCERT,        $this->cert_path);
