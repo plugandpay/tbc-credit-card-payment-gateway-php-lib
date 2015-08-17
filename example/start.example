@@ -2,7 +2,7 @@
 
 include 'tbcpay.lib.php';
 
-$Payment = new tbcpay( __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+$Payment = new tbcpay( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
 
 $Payment->amount         = 1; // 1 = 1 tetri
 $Payment->currency       = 981; // 981 = GEL
