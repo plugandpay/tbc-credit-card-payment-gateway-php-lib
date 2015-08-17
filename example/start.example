@@ -2,7 +2,12 @@
 
 include 'tbcpay.lib.php';
 
-$Payment = new tbcpay( 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler', __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'], 1, 981, 'product_id:1234567', 'GE' );
+$Payment = new tbcpay( __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+
+$Payment->amount         = 1; // 1 = 1 tetri
+$Payment->currency       = 981; // 981 = GEL
+$Payment->description    = 'Your product description, will be shown to client on card processing page!';
+$Payment->language       = 'GE'; // Interface language
 
 $start = $Payment->sms_start_transaction();
 
