@@ -1,4 +1,4 @@
-<?php
+<?php namespace WeAreDe\TbcPay;
 
 	/**
 	* 
@@ -17,7 +17,7 @@
 	* Written and maintained by sandro@weare.de.com
 	*
 	*/
-	class tbcpay
+	class TbcPayProcessor
 	{
 
 		/**

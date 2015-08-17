@@ -1,13 +1,16 @@
 <?php
 
-include 'tbcpay.lib.php';
+include '../src/WeAreDe/TbcPay/TbcPayProcessor.php';
 
-$Payment = new tbcpay( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+use WeAreDe\TbcPay\TbcPayProcessor;
 
-$Payment->amount         = 1; // 1 = 1 tetri
-$Payment->currency       = 981; // 981 = GEL
-$Payment->description    = 'Your product description, will be shown to client on card processing page!';
-$Payment->language       = 'GE'; // Interface language
+
+$Payment = new TbcPayProcessor( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+
+$Payment->amount      = 1; // 1 = 1 tetri
+$Payment->currency    = 981; // 981 = GEL
+$Payment->description = 'Your product description, will be shown to client on card processing page!';
+$Payment->language    = 'GE'; // Interface language
 
 $start = $Payment->sms_start_transaction();
 
