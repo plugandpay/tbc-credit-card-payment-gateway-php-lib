@@ -20,7 +20,7 @@ Every 24 hours, the merchant must send the close the business day request to ban
 ### Creating object
 
 ```php
-$Payment = new tbcpay( __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+$Payment = new tbcpay( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
 ```
 1. Certificate absolute path
 2. Certificate passphrase
