@@ -2,7 +2,7 @@
 
 # Tbcpay - online payments php SDK
 
-Making payment work on your website is a pain!  
+Making credit card payments work on your website is a pain!  
 So to make everyones' life a bit easier we are sharing the  
 Georgian TBC payment gateway sdk on GitHub.  
 
@@ -13,9 +13,9 @@ Have fun :)
 There are two types of transaction within this system: **SMS** and **DMS**.
 
 SMS - is direct payment, where money is charged in 1 event.  
-DMS - is delayed. Requires two events: first event blocks money on the card, second event takes this money. Second event can be carried out when product is shipped to the customer for example.
+DMS - is delayed. Requires two events: first event blocks money on the card, second event takes money (second event can be carried out when product is shipped to the customer for example).
 
-Every 24 hours, the merchant must send a request to server to close the business day.
+Every 24 hours, the merchant must send the close the business day request to bank server.
 
 ### Creating object
 
@@ -51,20 +51,17 @@ Method name | Return Value | Description
 2. Tell them your server IP so they whitelist it
 3. create `example.com/ok.php` and `example.com/fail.php` urls and tell them about it
    * ok url - is used for redirecting back user in almost all situations
-   * fail ulr - is used for redirecting back user when technocal error occurs
+   * fail ulr - is used for redirecting back user when technical error occurs
 
-1. `start.php` Here we start our process. We call bank servers using `sms_start_transaction()` and get `$trans_id` in return.
+1. `start.example` Here we start our process. We call bank servers using `sms_start_transaction()` and get `$trans_id` in return.
    * We use returned $trans_id to redirect user to a bank page, where credit card info can be entered.
-   * After user fills out card info he is thrown back to our `ok.php` url on our server.
-2. Take a look at `ok.php` We get `$trans_id` back from bank, and we plug that in `get_transaction_result( $trans_id )`
+   * After user fills out card info he is thrown back to our `ok.example` url on our server.
+2. Take a look at `ok.example` We get `$trans_id` back from bank, and we plug that in `get_transaction_result( $trans_id )`
 3. `get_transaction_result( $trans_id )` tells us if transaction was success or not. `array( 'RESULT' => 'OK' )` for example is success message, transaction went through.
 
 ### TODO
 
-1. Regular payments
-2. **DMS** example
-3. CRON for `close_day()`
-4. Make composer compatible
+Help needed with #3 !
 
 ### API
 
