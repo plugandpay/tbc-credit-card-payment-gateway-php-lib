@@ -55,7 +55,7 @@ Method name | Return Value | Description
 
 ### TODO
 
-Help needed with #3 !
+Help needed with [#3](/../../issues/3) !
 
 ### API
 
