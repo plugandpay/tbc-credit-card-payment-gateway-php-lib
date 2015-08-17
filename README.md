@@ -30,7 +30,7 @@ $Payment = new tbcpay( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOT
 
 Method name | Return Value | Description
 --- | --- | ---
-**sms_start_transaction()** | `array( 'TRANSACTION_ID' => 'AX23x...' )` | start SMS transaction. This is simplest form that charges amount to customer instantly.
+**sms_start_transaction()** | `array( 'TRANSACTION_ID' => 'AX23x...' )` | 
 **dms_start_authorization()** |
 **dms_make_transaction( $trans_id )** |
 **get_transaction_result( $trans_id )** |
