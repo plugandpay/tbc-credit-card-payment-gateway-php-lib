@@ -20,17 +20,11 @@ Every 24 hours, the merchant must send the close the business day request to ban
 ### Creating object
 
 ```php
-$Payment = new tbcpay( 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler', __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'], 1, 981, 'product_id:1234567', 'GE' );
+$Payment = new tbcpay( __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
 ```
-
-1. Submit url (provided by bank)
-2. Certificate absolute path
-3. Certificate passphrase
-4. Client ip address
-5. Amount `1` (0.01 gel)
-6. Currency `981` (http://en.wikipedia.org/wiki/ISO_4217)
-7. Description
-8. Interface language `EN`
+1. Certificate absolute path
+2. Certificate passphrase
+3. Client ip address
 
 ### Methods
 
