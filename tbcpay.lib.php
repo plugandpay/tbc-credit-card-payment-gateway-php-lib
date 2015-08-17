@@ -11,6 +11,11 @@
 	* 
 	* Every 24 hours, the merchant must send a request to server to close the business day.
 	*
+	* Detailed instructions can be found in README.md or online
+	* https://github.com/wearede/tbcpay-php
+	*
+	* Written and maintained by sandro@weare.de.com
+	*
 	*/
 	class tbcpay
 	{
