@@ -1,4 +1,4 @@
-<?php
+<?php namespace WeAreDe\TbcPay;
 
 	/**
 	* 
@@ -11,15 +11,20 @@
 	* 
 	* Every 24 hours, the merchant must send a request to server to close the business day.
 	*
+	* Detailed instructions can be found in README.md or online
+	* https://github.com/wearede/tbcpay-php
+	*
+	* Written and maintained by sandro@weare.de.com
+	*
 	*/
-	class tbcpay
+	class TbcPayProcessor
 	{
 
 		/**
 		 * gateway endpoint
 		 * @var string
 		 */
-		private $submit_url;
+		private $submit_url = 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler';
 
 		/**
 		 * absolute path to certificate
@@ -44,7 +49,7 @@
 		 * 100 = 1 unit of currency. e.g. 1 gel = 100.
 		 * @var numeric
 		 */
-		private $amount;
+		public $amount;
 
 		/**
 		 * transaction currency code (ISO 4217), mandatory, (3 digits)
@@ -52,20 +57,20 @@
 		 * GEL = 981 e.g.
 		 * @var numeric
 		 */
-		private $currency;
+		public $currency;
 
 		/**
 		 * transaction details, optional (up to 125 characters)
 		 * @var string
 		 */
-		private $description;
+		public $description;
 
 		/**
 		 * authorization language identifier, optional (up to 32 characters)
                  * EN, GE e.g,
 		 * @var string
 		 */
-		private $language;
+		public $language;
 
 		/**
 		 * ? this seems to be ignored by tbcbank
@@ -81,28 +86,16 @@
 
 		
 		/**
-		 * @param string  $submit_url
 		 * @param string  $cert_path
 		 * @param string  $cert_pass
-		 * @param numeric $amount
-		 * @param numeric $currency
 		 * @param string  $client_ip_addr
-		 * @param string  $description
-		 * @param string  $language
 		 */
-		function __construct( $submit_url, $cert_path, $cert_pass, $client_ip_addr = '', $amount = '', $currency = '', $description = '', $language = '' )
+		function __construct( $cert_path, $cert_pass, $client_ip_addr )
 		{
-			$this->submit_url     = $submit_url;
-
 			$this->cert_path      = $cert_path;
 			$this->cert_pass      = $cert_pass;
 
 			$this->client_ip_addr = $client_ip_addr;
-			$this->amount         = $amount;
-			$this->currency       = $currency;
-
-			$this->description    = $description;
-			$this->language       = $language;
 		}
 
 		/**
