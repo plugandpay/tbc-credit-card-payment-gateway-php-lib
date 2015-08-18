@@ -1,8 +1,11 @@
 <?php
 
-include 'tbcpay.lib.php';
+include '../src/WeAreDe/TbcPay/TbcPayProcessor.php';
 
-$Payment = new tbcpay( 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler', __DIR__ . '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+use WeAreDe\TbcPay\TbcPayProcessor;
+
+
+$Payment = new TbcPayProcessor( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
 
 if ( isset($_REQUEST['trans_id']) ) {
 	$trans_id = $_REQUEST['trans_id'];
