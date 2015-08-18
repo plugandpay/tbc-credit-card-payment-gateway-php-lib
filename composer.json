@@ -18,5 +18,7 @@
         "psr-4": {
             "WeAreDe\\TbcPay\\": "src/WeAreDe/TbcPay/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable" : true
 }
