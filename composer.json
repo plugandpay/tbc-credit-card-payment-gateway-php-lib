@@ -10,5 +10,13 @@
     ],
     "require": {
         "php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "WeAreDe\\TbcPay\\": "src/"
+        },
+        "psr-4": {
+            "WeAreDe\\TbcPay\\": "src/WeAreDe/TbcPay/"
+        }
     }
 }
