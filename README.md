@@ -17,6 +17,22 @@ DMS - is delayed. Requires two events: first event blocks money on the card, sec
 
 Every 24 hours, the merchant must send the close the business day request to bank server.
 
+### Install
+
+It is possible to simply include the library (check examples dir), but you should use composer instead.
+
+Add in composer.json
+```
+"require": {
+		"wearede/tbcpay-php": "dev-master"
+}
+```
+
+and run in terminal
+```
+composer update wearede/tbcpay-php
+```
+
 ### Creating object
 
 ```php
