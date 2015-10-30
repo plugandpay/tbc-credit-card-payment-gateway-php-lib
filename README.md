@@ -55,7 +55,7 @@ Method name | Return Value | Description
 **credit_transaction( $trans_id, $amount = '' )** |
 **close_day()** |
 
-### Use instructions
+### Instructions
 
 1. Ask bank to generate certificate
 2. Tell them your server IP so they whitelist it
