@@ -23,7 +23,9 @@ It is possible to simply include the library (check examples dir), but you shoul
 
 run in terminal:
 
-```composer require wearede/tbcpay-php:dev-master```
+```
+composer require wearede/tbcpay-php:dev-master
+```
 
 or
 
