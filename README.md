@@ -50,7 +50,7 @@ require __DIR__ . '/vendor/autoload.php';
 ### Creating object
 
 ```php
-$Payment = new tbcpay( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+$Payment = new TbcPayProcessor( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
 ```
 1. Certificate absolute path
 2. Certificate passphrase
