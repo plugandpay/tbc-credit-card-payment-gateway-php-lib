@@ -21,6 +21,12 @@ Every 24 hours, the merchant must send the close the business day request to ban
 
 It is possible to simply include the library (check examples dir), but you should use composer instead.
 
+run in terminal:
+
+`composer require wearede/tbcpay-php:dev-master`
+
+or
+
 Add in composer.json
 ```
 "require": {
