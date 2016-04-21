@@ -23,7 +23,7 @@ It is possible to simply include the library (check examples dir), but you shoul
 
 run in terminal:
 
-`composer require wearede/tbcpay-php:dev-master`
+```composer require wearede/tbcpay-php:dev-master```
 
 or
 
@@ -37,6 +37,12 @@ Add in composer.json
 and run in terminal
 ```
 composer update wearede/tbcpay-php
+```
+
+### Autoload
+
+```
+require __DIR__ . '/vendor/autoload.php';
 ```
 
 ### Creating object
