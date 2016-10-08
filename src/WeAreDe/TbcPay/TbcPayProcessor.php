@@ -99,7 +99,7 @@
 		}
 
 		/**
-		 * curl is responsible for sending data to remote server, using certificate for ssl connection
+		 * Curl is responsible for sending data to remote server, using certificate for ssl connection
 		 * @param  string $query_string created from an array using method build_query_string
 		 * @return string               returns tbc server response in the form of key: value \n key: value. OR error: value.
 		 */
@@ -124,7 +124,7 @@
 		}
 
 		/**
-		 * building string from array
+		 * Building string from array
 		 * @param  array  $post_fields
 		 * @return string
 		 */
@@ -134,7 +134,7 @@
 		}
 
 		/**
-		 * parse tbcbank server response string into an array
+		 * Parse tbcbank server response string into an array
 		 * @param  string $string
 		 * @return array
 		 */
