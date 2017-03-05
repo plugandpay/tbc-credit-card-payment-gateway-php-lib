@@ -1,14 +1,14 @@
 <?php namespace WeAreDe\TbcPay;
 
 	/**
-	* 
+	*
 	* Tbcpay - online payments php SDK
 	*
-	* 
+	*
 	* There are two types of transaction within this system: SMS and DMS.
 	* SMS - is direct payment, where money is charged in 1 event.
 	* DMS - is delayed. Requires two events: first event blocks money on the card, second event takes this money. Second event can be carried out when product is shipped to the customer for example.
-	* 
+	*
 	* Every 24 hours, the merchant must send a request to server to close the business day.
 	*
 	* Detailed instructions can be found in README.md or online
@@ -84,7 +84,7 @@
 		 * private $property_value;
 		 */
 
-		
+
 		/**
 		 * @param string  $cert_path
 		 * @param string  $cert_pass
@@ -147,7 +147,7 @@
 				$array2 = explode( ':', $value  );
 				$result[ $array2[0] ] = trim( $array2[1] );
 			}
-			
+
 			return $result;
 		}
 
@@ -290,7 +290,7 @@
 
 		/**
 		 * Transaction reversal
-		 * @param  string $trans_id        
+		 * @param  string $trans_id
 		 * @param  string $amount          reversal amount in fractional units (up to 12 characters). For DMS authorizations only full amount can be reversed, i.e., the reversal and authorization amounts have to match. In other cases partial reversal is also available.
 		 * @param  string $suspected_fraud flag, indicating that transaction is being reversed because of suspected fraud. In such cases this parameter value should be set to yes. If this parameter is used, then only full reversals are allowed.
 		 * @return array  RESULT, RESULT_CODE
