@@ -24,21 +24,7 @@ It is possible to simply include the library (check examples dir), but you shoul
 run in terminal:
 
 ```
-composer require wearede/tbcpay-php:dev-master
-```
-
-or
-
-Add in composer.json
-```
-"require": {
-		"wearede/tbcpay-php": "dev-master"
-}
-```
-
-and run in terminal
-```
-composer update wearede/tbcpay-php
+composer require wearede/tbcpay-php:dev-master#v.0.9.0-beta
 ```
 
 ### Autoload
