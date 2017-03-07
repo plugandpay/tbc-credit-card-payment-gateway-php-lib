@@ -2,7 +2,7 @@
     "name": "wearede/tbcpay-php",
     "description": "online payments php SDK - collect credit card payments via TbcBank processor",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "0.9.0",
     "authors": [
         {
             "name": "Sandro Dzneladze",
