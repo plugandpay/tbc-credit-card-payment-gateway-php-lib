@@ -74,6 +74,13 @@ class TbcPayProcessor
     public $language;
 
     /**
+     * IP address of customer, should be set in multi-ip environment
+     * as TBC does not open communication to web services publicly
+     * @var string
+     */
+    public $src_ip = null;
+    
+    /**
      * ? this seems to be ignored by tbcbank
      * @var string
      * private $property_name;
@@ -118,6 +125,10 @@ class TbcPayProcessor
         curl_setopt($curl, CURLOPT_SSLKEY, $this->cert_path);
         curl_setopt($curl, CURLOPT_SSLKEYPASSWD, $this->cert_pass);
         curl_setopt($curl, CURLOPT_URL, $this->submit_url);
+        
+        if (!is_null($this->src_ip)) {
+            curl_setopt($curl, CURLOPT_INTERFACE, $this->src_ip);
+        }
 
         $result = curl_exec($curl);
 
