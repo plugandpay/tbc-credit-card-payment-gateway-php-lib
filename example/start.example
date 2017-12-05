@@ -14,10 +14,6 @@ $Payment->language    = 'GE'; // Interface language
 
 $start = $Payment->sms_start_transaction();
 
-if (isset($start['TRANSACTION_ID']) AND !isset($start['error'])) {
-	$trans_id = $start['TRANSACTION_ID'];
-}
-
 ?>
 
 
@@ -42,7 +38,7 @@ if (isset($start['TRANSACTION_ID']) AND !isset($start['error'])) {
 
 <body onLoad="javascript:redirect()">
     <form name="returnform" action="https://securepay.ufc.ge/ecomm2/ClientHandler" method="POST">
-        <input type="hidden" name="trans_id" value="<?php echo $trans_id; ?>">
+        <input type="hidden" name="trans_id" value="<?php echo $start['TRANSACTION_ID']; ?>">
 
         <noscript>
             <center>Please click the submit button below.<br>
