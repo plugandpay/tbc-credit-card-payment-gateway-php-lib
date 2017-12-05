@@ -5,7 +5,7 @@ include '../src/WeAreDe/TbcPay/TbcPayProcessor.php';
 use WeAreDe\TbcPay\TbcPayProcessor;
 
 
-$Payment = new TbcPayProcessor( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+$Payment = new TbcPayProcessor('/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR']);
 
 $Payment->amount      = 1; // 1 = 1 tetri
 $Payment->currency    = 981; // 981 = GEL
@@ -14,7 +14,7 @@ $Payment->language    = 'GE'; // Interface language
 
 $start = $Payment->sms_start_transaction();
 
-if ( isset($start['TRANSACTION_ID']) AND !isset($start['error']) ) {
+if (isset($start['TRANSACTION_ID']) AND !isset($start['error'])) {
 	$trans_id = $start['TRANSACTION_ID'];
 }
 
@@ -31,7 +31,7 @@ if ( isset($start['TRANSACTION_ID']) AND !isset($start['error']) ) {
     </script>
 </head>
 
-<?php if ( isset($start['error']) ) { ?>
+<?php if (isset($start['error'])) { ?>
 
 <body>
     <h2>Error:</h2>
