@@ -8,7 +8,7 @@ use WeAreDe\TbcPay\TbcPayProcessor;
 $Payment = new TbcPayProcessor('/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR']);
 
 if (isset($_REQUEST['trans_id'])) {
-	$trans_id = $_REQUEST['trans_id'];
+	$trans_id = str_replace(' ', '+', $_REQUEST['trans_id']);
 	$result   = $Payment->get_transaction_result($trans_id);
 }
 
