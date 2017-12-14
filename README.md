@@ -70,5 +70,4 @@ Method name
 ### Common issues
 
 - TBC bank provides SSL certificate in **.p12** format, we need it in .pem format, to transform use command: `openssl pkcs12 -in *.p12 -out tbcpay.pem`
-
-**!** Move cert directory somewhere non public as a security meassure.  
+- Move cert directory somewhere non public as a security meassure. Give it correct permissions so that php can read it.
