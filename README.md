@@ -59,12 +59,14 @@ You can start by looking at the [fully functional working prototype](https://git
 
 ### Instructions
 
+#### Chores
 1. Ask TBC to generate a certificate
 2. Tell TBC your server IP so they can whitelist it
 3. create `example.com/ok.php` and `example.com/fail.php` urls and communicate these to TBC
    * ok url - is used for redirecting back user in almost all situations (even when card has insuficient funds and transaction fails!)
    * fail url - is used for redirecting back user when technical error occurs (very rare)
 
+#### Flow
 1. `start.example` Here we start our process. We call TBC servers using `sms_start_transaction()` and get `$trans_id` in return.
    * We use returned $trans_id to redirect user to a TBC page, where credit card info can be entered.
    * After user fills out card info he is thrown back to our `ok.example` url on our server.
