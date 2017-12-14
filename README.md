@@ -13,7 +13,7 @@ There are two types of transaction within this system: **SMS** and **DMS**.
 SMS - is direct payment, where money is charged in 1 event.  
 DMS - is delayed. Requires two events: first event blocks money on the card, second event takes money (second event can be carried out when product is shipped to the customer for example).
 
-Every 24 hours, the merchant must send the close the business day request to bank server.
+Every 24 hours, the merchant must send the close the business day request to TBC.
 
 ### Install
 
@@ -68,7 +68,7 @@ You can start by looking at the [fully functional working prototype](https://git
 1. `start.example` Here we start our process. We call TBC servers using `sms_start_transaction()` and get `$trans_id` in return.
    * We use returned $trans_id to redirect user to a TBC page, where credit card info can be entered.
    * After user fills out card info he is thrown back to our `ok.example` url on our server.
-2. Take a look at `ok.example` We get `$trans_id` back from bank, and we plug that in `get_transaction_result($trans_id)`
+2. Take a look at `ok.example` We get `$trans_id` back from TBC, and we plug that in `get_transaction_result($trans_id)`
 3. `get_transaction_result($trans_id)` tells us if transaction was success or not. `array('RESULT' => 'OK')` for example is success message, transaction went through.
 
 ### Common issues
