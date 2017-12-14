@@ -59,7 +59,7 @@ You can start by looking at the [fully functional working prototype](https://git
 
 ### Instructions
 
-For a [simple example](https://github.com/wearede/tbcpay-php/tree/master/example)
+For a [simple example](https://github.com/wearede/tbcpay-php/tree/master/example).
 
 #### Chores
 1. Ask TBC to generate a certificate
