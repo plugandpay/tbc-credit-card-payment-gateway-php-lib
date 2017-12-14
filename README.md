@@ -65,7 +65,7 @@ Method name
    * We use returned $trans_id to redirect user to a bank page, where credit card info can be entered.
    * After user fills out card info he is thrown back to our `ok.example` url on our server.
 2. Take a look at `ok.example` We get `$trans_id` back from bank, and we plug that in `get_transaction_result($trans_id)`
-3. `get_transaction_result( $trans_id )` tells us if transaction was success or not. `array('RESULT' => 'OK')` for example is success message, transaction went through.
+3. `get_transaction_result($trans_id)` tells us if transaction was success or not. `array('RESULT' => 'OK')` for example is success message, transaction went through.
 
 ### Common issues
 
