@@ -1,23 +1,21 @@
 ![face_post_tbc_payment](https://cloud.githubusercontent.com/assets/8479569/7435079/5aebe7cc-f051-11e4-8ee1-d85b0e36a8a9.jpg)
 
-# Tbcpay - online payments php SDK
+# Tbcpay - online (credit card) payments gateway php-SDK
 
-Making credit card payments work on your website is a pain!  
-So to make everyones' life a bit easier we are sharing the  
-Georgian TBC payment gateway sdk on GitHub.
+Making credit card payments work on your website (through a local bank) is a pain! So to make everyones' life a bit easier we are sharing the Georgian TBC credit card payments gateway php-SDK on GitHub.
 
 ### SMS / DMS
 
 There are two types of transaction within this system: **SMS** and **DMS**.
 
-SMS - is direct payment, where money is charged in 1 event.  
-DMS - is delayed. Requires two events: first event blocks money on the card, second event takes money (second event can be carried out when product is shipped to the customer for example).
+SMS - is a direct payment method, money is charged in 1 event, as soon as customer enters the credit card details.  
+DMS - is a two step method, first event blocks the money on the card (max 30 days), second event takes the money (second event can be carried out when product is shipped to the customer for example).
 
 Every 24 hours, the merchant must send the close the business day request to TBC.
 
 ### Install
 
-It is possible to simply include the library (see example), but you should use composer instead.
+It is possible to simply include the library [see example](https://github.com/wearede/tbcpay-php/tree/master/example), but you should use composer instead.
 
 run in terminal:
 
@@ -34,7 +32,7 @@ require __DIR__ . '/vendor/autoload.php';
 ### Creating object
 
 ```php
-$Payment = new TbcPayProcessor( '/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR'] );
+$Payment = new TbcPayProcessor('/cert/tbcpay.pem', '0DhJ4AdxVuPZmz3F4y', $_SERVER['REMOTE_ADDR']);
 ```
 1. Certificate absolute path
 2. Certificate passphrase
@@ -61,7 +59,7 @@ Method name
 
 ### Instructions
 
-For a [simpler example](https://github.com/wearede/tbcpay-php/tree/master/example)
+Relevant to a [simpler example](https://github.com/wearede/tbcpay-php/tree/master/example)
 
 #### Chores
 1. Ask TBC to generate a certificate
