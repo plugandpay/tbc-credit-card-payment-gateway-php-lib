@@ -53,10 +53,15 @@ Method name
 **credit_transaction($trans_id, $amount = '')**
 **close_day()**
 
+### Example implementations
+
+- To get started quick have a look at the [fully functional working prototype](https://github.com/wearede/tbcpay-php-example).  
+- You can find a [simpler example here](https://github.com/wearede/tbcpay-php/tree/master/example).
+- Laravel example coming soon!
+
 ### Instructions
 
-To get started quick have a look at the [fully functional working prototype](https://github.com/wearede/tbcpay-php-example).  
-You can find a [simpler example here](https://github.com/wearede/tbcpay-php/tree/master/example).
+For a [simpler example](https://github.com/wearede/tbcpay-php/tree/master/example)
 
 #### Chores
 1. Ask TBC to generate a certificate
@@ -76,3 +81,4 @@ You can find a [simpler example here](https://github.com/wearede/tbcpay-php/tree
 
 - TBC bank provides SSL certificate in **.p12** format, we need it in .pem format, to transform use command: `openssl pkcs12 -in *.p12 -out tbcpay.pem`
 - Move cert directory somewhere non public as a security meassure. Give it correct permissions so that php can read it.
+- SDK needs outgoing port 18443 open to communicate with TBC. Some hosting services do not allow this.
