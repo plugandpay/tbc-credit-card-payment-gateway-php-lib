@@ -55,8 +55,8 @@ Method name
 
 ### Instructions
 
-To get started quick have a look at the [fully functional working prototype](https://github.com/wearede/tbcpay-php-example).
-You can find a [simple example here](https://github.com/wearede/tbcpay-php/tree/master/example).
+To get started quick have a look at the [fully functional working prototype](https://github.com/wearede/tbcpay-php-example).  
+You can find a [simpler example here](https://github.com/wearede/tbcpay-php/tree/master/example).
 
 #### Chores
 1. Ask TBC to generate a certificate
