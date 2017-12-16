@@ -53,13 +53,10 @@ Method name
 **credit_transaction($trans_id, $amount = '')**
 **close_day()**
 
-### Getting started
-
-You can start by looking at the [fully functional working prototype](https://github.com/wearede/tbcpay-php-example).
-
 ### Instructions
 
-For a [simple example](https://github.com/wearede/tbcpay-php/tree/master/example).
+To get started quick have a look at the [fully functional working prototype](https://github.com/wearede/tbcpay-php-example).
+You can find a [simple example here](https://github.com/wearede/tbcpay-php/tree/master/example).
 
 #### Chores
 1. Ask TBC to generate a certificate
