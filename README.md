@@ -20,7 +20,7 @@ It is possible to simply include this library [see example](https://github.com/w
 run in terminal:
 
 ```
-composer require plugandpay/tbc-credit-card-payment-gateway-php-lib
+composer require wearede/tbcpay-php
 ```
 
 ### Creating object
