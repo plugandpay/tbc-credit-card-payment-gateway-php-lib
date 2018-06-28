@@ -25,7 +25,7 @@ class TbcPayProcessor
      * gateway endpoint
      * @var string
      */
-    private $submit_url = 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler';
+    public $submit_url = 'https://securepay.ufc.ge:18443/ecomm2/MerchantHandler';
 
     /**
      * absolute path to certificate
