@@ -74,6 +74,12 @@ class TbcPayProcessor
     public $language;
 
     /**
+     * visible on account statement, optional (up to 99 latin characters)
+     * @var string
+     */
+    public $biller;
+
+    /**
      * ? this seems to be ignored by tbcbank
      * @var string
      * private $property_name;
@@ -184,6 +190,7 @@ class TbcPayProcessor
             'client_ip_addr' => $this->client_ip_addr,
             'description'    => $this->description,
             'language'       => $this->language,
+            'biller'         => $this->biller,
             'msg_type'       => 'SMS'
         );
 
@@ -207,6 +214,7 @@ class TbcPayProcessor
             'client_ip_addr' => $this->client_ip_addr,
             'description'    => $this->description,
             'language'       => $this->language,
+            'biller'         => $this->biller,
             'msg_type'       => 'DMS'
         );
 
