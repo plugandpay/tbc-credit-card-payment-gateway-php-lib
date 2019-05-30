@@ -151,7 +151,9 @@ class TbcPayProcessor
         $result = array();
         foreach ($array1 as $key => $value) {
             $array2 = explode(':', $value);
-            $result[ $array2[0] ] = trim($array2[1]);
+            if (!empty($array2[1])) {
+                $result[ $array2[0] ] = trim($array2[1]);
+            }
         }
 
         return $result;
