@@ -80,6 +80,12 @@ class TbcPayProcessor
     public $biller;
 
     /**
+     * So far used only when paying with "Ertguli" points. Must be 80|0000
+     * @var string
+     */
+    public $account;
+
+    /**
      * ? this seems to be ignored by tbcbank
      * @var string
      * private $property_name;
@@ -196,6 +202,10 @@ class TbcPayProcessor
             'msg_type'       => 'SMS'
         );
 
+        if ($this->account) {
+            $post_fields['account'] = '80|0000';
+        }
+
         return $this->process($post_fields);
     }
 
@@ -219,6 +229,10 @@ class TbcPayProcessor
             'biller'         => $this->biller,
             'msg_type'       => 'DMS'
         );
+
+        if ($this->account) {
+            $post_fields['account'] = '80|0000';
+        }
 
         return $this->process($post_fields);
     }
