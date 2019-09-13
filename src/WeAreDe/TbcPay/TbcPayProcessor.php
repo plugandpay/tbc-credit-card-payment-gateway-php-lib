@@ -326,7 +326,6 @@ class TbcPayProcessor
 
     /**
      * Transaction refund
-     * full original amount is always refunded
      * @param  string  $trans_id original transaction identifier, mandatory (28 characters)
      * @param  string  $amount   refund amount in fractional units (up to 12 characters)
      * @return array  RESULT, RESULT_CODE, REFUND_TRANS_ID
