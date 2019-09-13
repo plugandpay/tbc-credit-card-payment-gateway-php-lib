@@ -307,7 +307,7 @@ class TbcPayProcessor
      * @return array  RESULT, RESULT_CODE
      * RESULT         - OK              - successful reversal transaction
      *                  REVERSED        - transaction has already been reversed
-     *          FAILED          - failed to reverse transaction (transaction status remains as it was)
+     *                  FAILED          - failed to reverse transaction (transaction status remains as it was)
      * RESULT_CODE    - reversal result code returned from Card Suite Processing RTPS (3 digits)
      * error          - In case of an error
      * warning        - In case of warning (reserved for future use).
@@ -327,20 +327,22 @@ class TbcPayProcessor
     /**
      * Transaction refund
      * full original amount is always refunded
-     * @param  string $trans_id
+     * @param  string  $trans_id original transaction identifier, mandatory (28 characters)
+     * @param  string  $amount   refund amount in fractional units (up to 12 characters)
      * @return array  RESULT, RESULT_CODE, REFUND_TRANS_ID
      * RESULT          - OK     - successful refund transaction
-     *               FAILED - failed refund transaction
+     *                   FAILED - failed refund transaction
      * RESULT_CODE     - result code returned from Card Suite Processing RTPS (3 digits)
      * REFUND_TRANS_ID - refund transaction identifier - applicable for obtaining refund payment details or to request refund payment reversal.
      * error           - In case of an error
      * warning         - In case of warning (reserved for future use).
      */
-    public function refund_transaction($trans_id)
+    public function refund_transaction($trans_id, $amount = '')
     {
         $post_fields = array(
             'command'         => 'k', // identifies a request for transaction registration
-            'trans_id'        => $trans_id
+            'trans_id'        => $trans_id,
+            'amount'          => $amount
         );
 
         return $this->process($post_fields);
