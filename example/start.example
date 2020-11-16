@@ -37,7 +37,7 @@ $start = $Payment->sms_start_transaction();
 <?php } elseif (isset($start['TRANSACTION_ID'])) { ?>
 
 <body onLoad="javascript:redirect()">
-    <form name="returnform" action="https://securepay.ufc.ge/ecomm2/ClientHandler" method="POST">
+    <form name="returnform" action="https://ecommerce.ufc.ge/ecomm2/ClientHandler" method="POST">
         <input type="hidden" name="trans_id" value="<?php echo $start['TRANSACTION_ID']; ?>">
 
         <noscript>
