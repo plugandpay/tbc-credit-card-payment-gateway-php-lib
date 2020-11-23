@@ -68,7 +68,7 @@ class TbcPayProcessor
 
     /**
      * authorization language identifier, optional (up to 32 characters)
-             * EN, GE e.g,
+     * EN, GE e.g,
      * @var string
      */
     public $language;
@@ -78,6 +78,12 @@ class TbcPayProcessor
      * @var string
      */
     public $biller;
+    
+    /**
+     * charge ertguli points instead of cash
+     * @var bool
+     */
+    public $charge_ertguli_points = false;
 
     /**
      * ? this seems to be ignored by tbcbank
@@ -90,7 +96,6 @@ class TbcPayProcessor
      * @var string
      * private $property_value;
      */
-
 
     /**
      * @param string  $cert_path
@@ -195,6 +200,10 @@ class TbcPayProcessor
             'biller'         => $this->biller,
             'msg_type'       => 'SMS'
         );
+        
+        if ($this->charge_ertguli_points) {
+            $post_fields['account'] = '80|0000';
+        }
 
         return $this->process($post_fields);
     }
@@ -219,6 +228,10 @@ class TbcPayProcessor
             'biller'         => $this->biller,
             'msg_type'       => 'DMS'
         );
+        
+        if ($this->charge_ertguli_points) {
+            $post_fields['account'] = '80|0000';
+        }
 
         return $this->process($post_fields);
     }
