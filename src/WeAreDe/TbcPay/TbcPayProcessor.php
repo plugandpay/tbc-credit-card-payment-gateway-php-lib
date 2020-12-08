@@ -405,5 +405,61 @@ class TbcPayProcessor
         return $this->process($post_fields);
     }
 
-    // Regular payments need to be implemented!
+    // TODO: Document regular payment methods.
+    
+    public function capture_and_save( $biller_client_id, $expiry )
+    {
+        $post_fields = array(
+            'command'          => 'z', // Identifies a request.
+            'amount'           => $this->amount,
+            'currency'         => $this->currency,
+            'client_ip_addr'   => $this->client_ip_addr,
+            'description'      => $this->description,
+            'language'         => $this->language,
+            'biller'           => $this->biller,
+            'biller_client_id' => $biller_client_id,
+            'expiry'           => $expiry, // MMYY
+        );
+
+        if ($this->charge_ertguli_points) {
+            $post_fields['account'] = '80|0000';
+        }
+
+        return $this->process($post_fields);
+    }
+
+    public function save( $biller_client_id, $expiry )
+    {
+        $post_fields = array(
+            'command'          => 'p', // Identifies a request.
+            'currency'         => $this->currency,
+            'client_ip_addr'   => $this->client_ip_addr,
+            'description'      => $this->description,
+            'language'         => $this->language,
+            'biller_client_id' => $biller_client_id,
+            'expiry'           => $expiry, // MMYY.
+        );
+
+        return $this->process($post_fields);
+    }
+
+    public function capture_saved( $biller_client_id )
+    {
+        $post_fields = array(
+            'command'          => 'e', // Identifies a request.
+            'amount'           => $this->amount,
+            'currency'         => $this->currency,
+            'client_ip_addr'   => $this->client_ip_addr,
+            'description'      => $this->description,
+            'biller'           => $this->biller,
+            'biller_client_id' => $biller_client_id,
+        );
+
+        if ($this->charge_ertguli_points) {
+            $post_fields['account'] = '80|0000';
+        }
+
+        return $this->process($post_fields);
+    }
+
 }
