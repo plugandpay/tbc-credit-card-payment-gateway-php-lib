@@ -418,7 +418,9 @@ class TbcPayProcessor
             'language'         => $this->language,
             'biller'           => $this->biller,
             'biller_client_id' => $biller_client_id,
-            'expiry'           => $expiry, // MMYY
+            'perspayee_expiry' => $expiry, // MMYY
+            'perspayee_gen'    => 1,
+            'msg_type'         => 'SMS',
         );
 
         if ($this->charge_ertguli_points) {
@@ -437,7 +439,9 @@ class TbcPayProcessor
             'description'      => $this->description,
             'language'         => $this->language,
             'biller_client_id' => $biller_client_id,
-            'expiry'           => $expiry, // MMYY.
+            'perspayee_expiry' => $expiry, // MMYY
+            'perspayee_gen'    => 1,
+            'msg_type'         => 'AUTH',
         );
 
         return $this->process($post_fields);
