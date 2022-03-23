@@ -80,6 +80,12 @@ class TbcPayProcessor
     public $biller;
     
     /**
+     * when using multimerchant, sub account id, optional
+     * @var string
+     */
+    public $merchant_id2;
+    
+    /**
      * charge ertguli points instead of cash
      * @var bool
      */
@@ -198,6 +204,7 @@ class TbcPayProcessor
             'description'    => $this->description,
             'language'       => $this->language,
             'biller'         => $this->biller,
+            'merchant_id2'   => $this->merchant_id2,
             'msg_type'       => 'SMS'
         );
         
@@ -226,6 +233,7 @@ class TbcPayProcessor
             'description'    => $this->description,
             'language'       => $this->language,
             'biller'         => $this->biller,
+            'merchant_id2'   => $this->merchant_id2,
             'msg_type'       => 'DMS'
         );
         
@@ -257,6 +265,7 @@ class TbcPayProcessor
             'client_ip_addr' => $this->client_ip_addr,
             'description'    => $this->description,
             'language'       => $this->language,
+            'merchant_id2'   => $this->merchant_id2,
             'msg_type'       => 'DMS'
         );
 
@@ -420,6 +429,7 @@ class TbcPayProcessor
             'biller_client_id' => $biller_client_id,
             'perspayee_expiry' => $expiry, // MMYY
             'perspayee_gen'    => 1,
+            'merchant_id2'     => $this->merchant_id2,
             'msg_type'         => 'SMS',
         );
 
@@ -441,6 +451,7 @@ class TbcPayProcessor
             'biller_client_id' => $biller_client_id,
             'perspayee_expiry' => $expiry, // MMYY
             'perspayee_gen'    => 1,
+            'merchant_id2'     => $this->merchant_id2,
             'msg_type'         => 'AUTH',
         );
 
@@ -457,6 +468,7 @@ class TbcPayProcessor
             'description'      => $this->description,
             'biller'           => $this->biller,
             'biller_client_id' => $biller_client_id,
+            'merchant_id2'     => $this->merchant_id2,
         );
 
         if ($this->charge_ertguli_points) {
